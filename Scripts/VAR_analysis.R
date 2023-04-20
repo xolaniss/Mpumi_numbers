@@ -72,6 +72,12 @@ summary(var_model)
 cpi_gfcf_irf <- irf(var_model, n.ahead = 10)
 plot(cpi_gfcf_irf)
 
+
+# Granger causality -------------------------------------------------------
+causality(var_model, cause = "data_ts.CPI") # Can only do with two variables # can switch the direction
+
+
+
 # Export ---------------------------------------------------------------
 artifacts_var <- list (
  data_ts = data_ts,
